@@ -110877,57 +110877,34 @@ module.exports = function (regExp, replace) {
 
 /***/ }),
 /* 756 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_phaser__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__config__ = __webpack_require__(1391);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Scenes_Game__ = __webpack_require__(1392);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Scenes_Boot__ = __webpack_require__(1399);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Scenes_UI__ = __webpack_require__(1400);
 
 
-__webpack_require__(50);
 
-var _config = __webpack_require__(1391);
 
-var _config2 = _interopRequireDefault(_config);
 
-var _Game = __webpack_require__(1392);
 
-var _Game2 = _interopRequireDefault(_Game);
-
-var _Boot = __webpack_require__(1399);
-
-var _Boot2 = _interopRequireDefault(_Boot);
-
-var _UI = __webpack_require__(1400);
-
-var _UI2 = _interopRequireDefault(_UI);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Game = function (_Phaser$Game) {
-  _inherits(Game, _Phaser$Game);
-
-  function Game() {
-    _classCallCheck(this, Game);
-
-    var _this = _possibleConstructorReturn(this, (Game.__proto__ || Object.getPrototypeOf(Game)).call(this, _config2.default));
-
-    _this.scene.add('Boot', _Boot2.default);
-    _this.scene.add('Game', _Game2.default);
-    _this.scene.add('UI', _UI2.default);
-    _this.scene.start('Boot');
-    return _this;
+class Game extends Phaser.Game {
+  constructor() {
+    super(__WEBPACK_IMPORTED_MODULE_1__config__["a" /* default */]);
+    this.scene.add('Boot', __WEBPACK_IMPORTED_MODULE_3__Scenes_Boot__["a" /* default */]);
+    this.scene.add('Game', __WEBPACK_IMPORTED_MODULE_2__Scenes_Game__["a" /* default */]);
+    this.scene.add('UI', __WEBPACK_IMPORTED_MODULE_4__Scenes_UI__["a" /* default */]);
+    this.scene.start('Boot');
   }
-
-  return Game;
-}(Phaser.Game);
+}
 
 window.game = new Game();
-window.addEventListener('resize', function (event) {
+window.addEventListener('resize', event => {
   window.game.resize(window.innerWidth, window.innerHeight);
 });
 
@@ -161936,18 +161913,14 @@ module.exports = ReverseString;
 
 /***/ }),
 /* 1391 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_phaser__);
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-__webpack_require__(50);
-
-exports.default = {
+/* harmony default export */ __webpack_exports__["a"] = ({
   type: Phaser.AUTO,
   parent: 'phaser-example',
   width: window.innerWidth,
@@ -161961,835 +161934,602 @@ exports.default = {
       gravity: { y: 0 }
     }
   }
-};
+});
 
 /***/ }),
 /* 1392 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_phaser__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Sprites_Player__ = __webpack_require__(1393);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Sprites_Portal__ = __webpack_require__(1394);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Groups_Coins__ = __webpack_require__(1395);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Groups_Enemies__ = __webpack_require__(1396);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Groups_Bullets__ = __webpack_require__(1398);
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(50);
 
-var _Player = __webpack_require__(1393);
 
-var _Player2 = _interopRequireDefault(_Player);
 
-var _Portal = __webpack_require__(1394);
-
-var _Portal2 = _interopRequireDefault(_Portal);
-
-var _Coins = __webpack_require__(1395);
-
-var _Coins2 = _interopRequireDefault(_Coins);
-
-var _Enemies = __webpack_require__(1396);
-
-var _Enemies2 = _interopRequireDefault(_Enemies);
-
-var _Bullets = __webpack_require__(1398);
-
-var _Bullets2 = _interopRequireDefault(_Bullets);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var GameScene = function (_Phaser$Scene) {
-  _inherits(GameScene, _Phaser$Scene);
-
-  function GameScene(key) {
-    _classCallCheck(this, GameScene);
-
-    return _possibleConstructorReturn(this, (GameScene.__proto__ || Object.getPrototypeOf(GameScene)).call(this, key));
+class GameScene extends Phaser.Scene {
+  constructor(key) {
+    super(key);
   }
 
-  _createClass(GameScene, [{
-    key: 'init',
-    value: function init(data) {
-      this._LEVEL = data.level;
-      this._LEVELS = data.levels;
-      this._NEWGAME = data.newGame;
-      this.loadingLevel = false;
-      if (this._NEWGAME) this.events.emit('newGame');
+  init(data) {
+    this._LEVEL = data.level;
+    this._LEVELS = data.levels;
+    this._NEWGAME = data.newGame;
+    this.loadingLevel = false;
+    if (this._NEWGAME) this.events.emit('newGame');
+  }
+
+  create() {
+
+    /*Audio de fondo*/
+    var music = this.sound.add('theme');
+    music.play();
+
+    // listen for the resize event
+    this.events.on('resize', this.resize, this);
+    // listen for player input
+    this.cursors = this.input.keyboard.createCursorKeys();
+    this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+
+    // create our tilemap
+    this.createMap();
+    // create our player
+    this.createPlayer();
+    // creating the portal
+    this.createPortal();
+    // creating the coins
+    this.coins = this.map.createFromObjects('Coins', 'Coin', { key: 'coin' });
+    this.coinsGroup = new __WEBPACK_IMPORTED_MODULE_3__Groups_Coins__["a" /* default */](this.physics.world, this, [], this.coins);
+    // creating the enemies
+    this.enemies = this.map.createFromObjects('Enemies', 'Enemy', {});
+    this.enemiesGroup = new __WEBPACK_IMPORTED_MODULE_4__Groups_Enemies__["a" /* default */](this.physics.world, this, [], this.enemies, this._LEVEL);
+    // creating the bullets
+    this.bullets = new __WEBPACK_IMPORTED_MODULE_5__Groups_Bullets__["a" /* default */](this.physics.world, this, []);
+
+    // add collisions
+    this.addCollisions();
+
+    // update our camera
+    this.cameras.main.startFollow(this.player); // animación al andar hacia la izquierda
+    this.anims.create({
+      key: 'left',
+      frames: this.anims.generateFrameNumbers('player', { start: 10, end: 18 }),
+      frameRate: 10,
+      repeat: -1
+    });
+
+    // animación al no hacer nada
+    this.anims.create({
+      key: 'idle',
+      frames: [{ key: 'player', frame: 19 }],
+      frameRate: 20
+    });
+
+    // animación al andar hacia la derecha
+    this.anims.create({
+      key: 'right',
+      frames: this.anims.generateFrameNumbers('player', { start: 28, end: 36 }),
+      frameRate: 10,
+      repeat: -1
+    });
+
+    // animación al andar hacia arriba
+    this.anims.create({
+      key: 'up',
+      frames: this.anims.generateFrameNumbers('player', { start: 0, end: 8 }),
+      frameRate: 10,
+      repeat: -1
+    });
+
+    // animación al andar hacia abajo
+    this.anims.create({
+      key: 'down',
+      frames: this.anims.generateFrameNumbers('player', { start: 19, end: 27 }),
+      frameRate: 10,
+      repeat: -1
+    });
+  }
+
+  update() {
+    this.player.update(this.cursors);
+
+    // mover a la izquierda
+    if (this.cursors.left.isDown) {
+      this.player.setVelocityX(-230);
+      this.player.anims.play('left', true);
+
+      // mover a la derecha
+    } else if (this.cursors.right.isDown) {
+      this.player.setVelocityX(230);
+      this.player.anims.play('right', true);
+
+      // mover arriba
+    } else if (this.cursors.up.isDown) {
+      this.player.setVelocityY(-230);
+      this.player.anims.play('up', true);
+
+      // mover arriba
+    } else if (this.cursors.down.isDown) {
+      this.player.setVelocityY(230);
+      this.player.anims.play('down', true);
+
+      // animación de idle
+    } else {
+      this.player.setVelocityX(0);
+      this.player.anims.play('idle');
     }
-  }, {
-    key: 'create',
-    value: function create() {
 
-      /*Audio de fondo*/
-      var music = this.sound.add('theme');
-      music.play();
-
-      // listen for the resize event
-      this.events.on('resize', this.resize, this);
-      // listen for player input
-      this.cursors = this.input.keyboard.createCursorKeys();
-      this.spaceKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-
-      // create our tilemap
-      this.createMap();
-      // create our player
-      this.createPlayer();
-      // creating the portal
-      this.createPortal();
-      // creating the coins
-      this.coins = this.map.createFromObjects('Coins', 'Coin', { key: 'coin' });
-      this.coinsGroup = new _Coins2.default(this.physics.world, this, [], this.coins);
-      // creating the enemies
-      this.enemies = this.map.createFromObjects('Enemies', 'Enemy', {});
-      this.enemiesGroup = new _Enemies2.default(this.physics.world, this, [], this.enemies, this._LEVEL);
-      // creating the bullets
-      this.bullets = new _Bullets2.default(this.physics.world, this, []);
-
-      // add collisions
-      this.addCollisions();
-
-      // update our camera
-      this.cameras.main.startFollow(this.player); // animación al andar hacia la izquierda
-      this.anims.create({
-        key: 'left',
-        frames: this.anims.generateFrameNumbers('player', { start: 10, end: 18 }),
-        frameRate: 10,
-        repeat: -1
-      });
-
-      // animación al no hacer nada
-      this.anims.create({
-        key: 'idle',
-        frames: [{ key: 'player', frame: 19 }],
-        frameRate: 20
-      });
-
-      // animación al andar hacia la derecha
-      this.anims.create({
-        key: 'right',
-        frames: this.anims.generateFrameNumbers('player', { start: 28, end: 36 }),
-        frameRate: 10,
-        repeat: -1
-      });
-
-      // animación al andar hacia arriba
-      this.anims.create({
-        key: 'up',
-        frames: this.anims.generateFrameNumbers('player', { start: 0, end: 8 }),
-        frameRate: 10,
-        repeat: -1
-      });
-
-      // animación al andar hacia abajo
-      this.anims.create({
-        key: 'down',
-        frames: this.anims.generateFrameNumbers('player', { start: 19, end: 27 }),
-        frameRate: 10,
-        repeat: -1
-      });
+    if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
+      this.bullets.fireBullet(this.player.x, this.player.y, this.player.direction);
     }
-  }, {
-    key: 'update',
-    value: function update() {
-      this.player.update(this.cursors);
+  }
 
-      // mover a la izquierda
-      if (this.cursors.left.isDown) {
-        this.player.setVelocityX(-230);
-        this.player.anims.play('left', true);
+  addCollisions() {
+    this.physics.add.collider(this.player, this.blockedLayer);
+    this.physics.add.collider(this.enemiesGroup, this.blockedLayer);
+    this.physics.add.overlap(this.player, this.enemiesGroup, this.player.enemyCollision.bind(this.player));
+    this.physics.add.overlap(this.player, this.portal, this.loadNextLevel.bind(this, false));
+    this.physics.add.overlap(this.coinsGroup, this.player, this.coinsGroup.collectCoin.bind(this.coinsGroup));
+    this.physics.add.overlap(this.bullets, this.enemiesGroup, this.bullets.enemyCollision);
+  }
 
-        // mover a la derecha
-      } else if (this.cursors.right.isDown) {
-        this.player.setVelocityX(230);
-        this.player.anims.play('right', true);
-
-        // mover arriba
-      } else if (this.cursors.up.isDown) {
-        this.player.setVelocityY(-230);
-        this.player.anims.play('up', true);
-
-        // mover arriba
-      } else if (this.cursors.down.isDown) {
-        this.player.setVelocityY(230);
-        this.player.anims.play('down', true);
-
-        // animación de idle
+  createPlayer() {
+    this.map.findObject('Player', obj => {
+      if (this._NEWGAME && this._LEVEL === 1) {
+        if (obj.type === 'StartingPosition') {
+          this.player = new __WEBPACK_IMPORTED_MODULE_1__Sprites_Player__["a" /* default */](this, obj.x, obj.y);
+        }
       } else {
-        this.player.setVelocityX(0);
-        this.player.anims.play('idle');
+        this.player = new __WEBPACK_IMPORTED_MODULE_1__Sprites_Player__["a" /* default */](this, obj.x, obj.y);
       }
+    });
+  }
 
-      if (Phaser.Input.Keyboard.JustDown(this.spaceKey)) {
-        this.bullets.fireBullet(this.player.x, this.player.y, this.player.direction);
+  createPortal() {
+    this.map.findObject('Portal', obj => {
+      if (this._LEVEL === 1) {
+        this.portal = new __WEBPACK_IMPORTED_MODULE_2__Sprites_Portal__["a" /* default */](this, obj.x, obj.y - 68);
+      } else if (this._LEVEL === 2) {
+        this.portal = new __WEBPACK_IMPORTED_MODULE_2__Sprites_Portal__["a" /* default */](this, obj.x, obj.y + 70);
       }
-    }
-  }, {
-    key: 'addCollisions',
-    value: function addCollisions() {
-      this.physics.add.collider(this.player, this.blockedLayer);
-      this.physics.add.collider(this.enemiesGroup, this.blockedLayer);
-      this.physics.add.overlap(this.player, this.enemiesGroup, this.player.enemyCollision.bind(this.player));
-      this.physics.add.overlap(this.player, this.portal, this.loadNextLevel.bind(this, false));
-      this.physics.add.overlap(this.coinsGroup, this.player, this.coinsGroup.collectCoin.bind(this.coinsGroup));
-      this.physics.add.overlap(this.bullets, this.enemiesGroup, this.bullets.enemyCollision);
-    }
-  }, {
-    key: 'createPlayer',
-    value: function createPlayer() {
-      var _this2 = this;
+    });
+  }
 
-      this.map.findObject('Player', function (obj) {
-        if (_this2._NEWGAME && _this2._LEVEL === 1) {
-          if (obj.type === 'StartingPosition') {
-            _this2.player = new _Player2.default(_this2, obj.x, obj.y);
-          }
-        } else {
-          _this2.player = new _Player2.default(_this2, obj.x, obj.y);
+  resize(width, height) {
+    if (width === undefined) {
+      width = this.sys.game.config.width;
+    }
+    if (height === undefined) {
+      height = this.sys.game.config.height;
+    }
+    this.cameras.resize(width, height);
+  }
+
+  createMap() {
+    // add water background
+    this.add.tileSprite(0, 0, 10000, 10000, 'RPGpack_sheet', 31);
+    // create the tilemap
+    this.map = this.make.tilemap({ key: this._LEVELS[this._LEVEL] });
+    // add tileset image
+    this.tiles = this.map.addTilesetImage('RPGpack_sheet');
+    // create our layers
+    this.backgroundLayer = this.map.createStaticLayer('Background', this.tiles, 0, 0);
+    this.blockedLayer = this.map.createStaticLayer('Blocked', this.tiles, 0, 0);
+    this.blockedLayer.setCollisionByExclusion([-1]);
+  }
+
+  //Cuando muere se pone la pantalla de color rojo
+
+  loadNextLevel(endGame) {
+    if (!this.loadingLevel) {
+      this.cameras.main.fade(200, 200, 0, 0);
+      this.cameras.main.on('camerafadeoutcomplete', () => {
+        if (endGame) {
+          this.scene.restart({ level: 1, levels: this._LEVELS, newGame: true });
+        } else if (this._LEVEL === 1) {
+          this.scene.restart({ level: 2, levels: this._LEVELS, newGame: false });
+        } else if (this._LEVEL === 2) {
+          this.scene.restart({ level: 1, levels: this._LEVELS, newGame: false });
         }
       });
+      this.loadingLevel = true;
     }
-  }, {
-    key: 'createPortal',
-    value: function createPortal() {
-      var _this3 = this;
-
-      this.map.findObject('Portal', function (obj) {
-        if (_this3._LEVEL === 1) {
-          _this3.portal = new _Portal2.default(_this3, obj.x, obj.y - 68);
-        } else if (_this3._LEVEL === 2) {
-          _this3.portal = new _Portal2.default(_this3, obj.x, obj.y + 70);
-        }
-      });
-    }
-  }, {
-    key: 'resize',
-    value: function resize(width, height) {
-      if (width === undefined) {
-        width = this.sys.game.config.width;
-      }
-      if (height === undefined) {
-        height = this.sys.game.config.height;
-      }
-      this.cameras.resize(width, height);
-    }
-  }, {
-    key: 'createMap',
-    value: function createMap() {
-      // add water background
-      this.add.tileSprite(0, 0, 10000, 10000, 'RPGpack_sheet', 31);
-      // create the tilemap
-      this.map = this.make.tilemap({ key: this._LEVELS[this._LEVEL] });
-      // add tileset image
-      this.tiles = this.map.addTilesetImage('RPGpack_sheet');
-      // create our layers
-      this.backgroundLayer = this.map.createStaticLayer('Background', this.tiles, 0, 0);
-      this.blockedLayer = this.map.createStaticLayer('Blocked', this.tiles, 0, 0);
-      this.blockedLayer.setCollisionByExclusion([-1]);
-    }
-
-    //Cuando muere se pone la pantalla de color rojo
-
-  }, {
-    key: 'loadNextLevel',
-    value: function loadNextLevel(endGame) {
-      var _this4 = this;
-
-      if (!this.loadingLevel) {
-        this.cameras.main.fade(200, 200, 0, 0);
-        this.cameras.main.on('camerafadeoutcomplete', function () {
-          if (endGame) {
-            _this4.scene.restart({ level: 1, levels: _this4._LEVELS, newGame: true });
-          } else if (_this4._LEVEL === 1) {
-            _this4.scene.restart({ level: 2, levels: _this4._LEVELS, newGame: false });
-          } else if (_this4._LEVEL === 2) {
-            _this4.scene.restart({ level: 1, levels: _this4._LEVELS, newGame: false });
-          }
-        });
-        this.loadingLevel = true;
-      }
-    }
-  }]);
-
-  return GameScene;
-}(Phaser.Scene);
-
-exports.default = GameScene;
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = GameScene;
 ;
 
 /***/ }),
 /* 1393 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_phaser__);
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-__webpack_require__(50);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Player = function (_Phaser$Physics$Arcad) {
-  _inherits(Player, _Phaser$Physics$Arcad);
-
-  function Player(scene, x, y) {
-    _classCallCheck(this, Player);
-
-    var _this = _possibleConstructorReturn(this, (Player.__proto__ || Object.getPrototypeOf(Player)).call(this, scene, x, y, 'player', 325));
-
-    _this.scene = scene;
-    _this.health = 7;
-    _this.hitDelay = false;
-    _this.direction = 'up';
+class Player extends Phaser.Physics.Arcade.Sprite {
+  constructor(scene, x, y) {
+    super(scene, x, y, 'player', 325);
+    this.scene = scene;
+    this.health = 7;
+    this.hitDelay = false;
+    this.direction = 'up';
 
     // enable physics
-    _this.scene.physics.world.enable(_this);
+    this.scene.physics.world.enable(this);
     // add our player to the scene
-    _this.scene.add.existing(_this);
+    this.scene.add.existing(this);
     // scale our player
-    _this.setScale(1.4);
-    return _this;
+    this.setScale(1.4);
   }
 
-  _createClass(Player, [{
-    key: 'update',
-    value: function update(cursors) {
-      this.setVelocity(0);
-      // check if the up or down key is pressed
-      if (cursors.up.isDown) {
-        this.direction = 'up';
-        this.setVelocityY(-150);
-      } else if (cursors.down.isDown) {
-        this.direction = 'down';
-        this.setVelocityY(150);
-      }
-      // check if the left or right key is pressed
-      if (cursors.left.isDown) {
-        this.direction = 'left';
-        this.setVelocityX(-150);
-      } else if (cursors.right.isDown) {
-        this.direction = 'right';
-        this.setVelocityX(150);
-      }
+  update(cursors) {
+    this.setVelocity(0);
+    // check if the up or down key is pressed
+    if (cursors.up.isDown) {
+      this.direction = 'up';
+      this.setVelocityY(-150);
+    } else if (cursors.down.isDown) {
+      this.direction = 'down';
+      this.setVelocityY(150);
     }
-  }, {
-    key: 'loseHealth',
-    value: function loseHealth() {
-      this.health--;
-      this.scene.events.emit('loseHealth', this.health);
-
-      if (this.health === 0) {
-        this.scene.loadNextLevel(true);
-      }
+    // check if the left or right key is pressed
+    if (cursors.left.isDown) {
+      this.direction = 'left';
+      this.setVelocityX(-150);
+    } else if (cursors.right.isDown) {
+      this.direction = 'right';
+      this.setVelocityX(150);
     }
-  }, {
-    key: 'enemyCollision',
-    value: function enemyCollision(player, enemy) {
-      var _this2 = this;
-
-      if (!this.hitDelay) {
-        this.loseHealth();
-        this.hitDelay = true;
-        this.tint = 0xff0000;
-        this.scene.time.addEvent({
-          delay: 1200,
-          callback: function callback() {
-            _this2.hitDelay = false;
-            _this2.tint = 0xffffff;
-          },
-          callbackScope: this
-        });
-      }
-    }
-  }]);
-
-  return Player;
-}(Phaser.Physics.Arcade.Sprite);
-
-exports.default = Player;
-
-/***/ }),
-/* 1394 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-__webpack_require__(50);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Player = function (_Phaser$Physics$Arcad) {
-  _inherits(Player, _Phaser$Physics$Arcad);
-
-  function Player(scene, x, y) {
-    _classCallCheck(this, Player);
-
-    var _this = _possibleConstructorReturn(this, (Player.__proto__ || Object.getPrototypeOf(Player)).call(this, scene, x, y, 'portal'));
-
-    _this.scene = scene;
-
-    // enable physics
-    _this.scene.physics.world.enable(_this);
-    // add our player to the scene
-    _this.scene.add.existing(_this);
-    return _this;
   }
 
-  return Player;
-}(Phaser.Physics.Arcade.Sprite);
+  loseHealth() {
+    this.health--;
+    this.scene.events.emit('loseHealth', this.health);
 
-exports.default = Player;
-
-/***/ }),
-/* 1395 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-__webpack_require__(50);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Coins = function (_Phaser$Physics$Arcad) {
-  _inherits(Coins, _Phaser$Physics$Arcad);
-
-  function Coins(world, scene, children, spriteArray) {
-    _classCallCheck(this, Coins);
-
-    var _this = _possibleConstructorReturn(this, (Coins.__proto__ || Object.getPrototypeOf(Coins)).call(this, world, scene, children));
-
-    _this.scene = scene;
-
-    // add coins to our group
-    spriteArray.forEach(function (coin) {
-      coin.setScale(0.2);
-      _this.add(coin);
-    });
-    _this.refresh();
-    return _this;
+    if (this.health === 0) {
+      this.scene.loadNextLevel(true);
+    }
   }
 
-  _createClass(Coins, [{
-    key: 'collectCoin',
-    value: function collectCoin(player, coin) {
-      this.remove(coin);
-      coin.destroy();
-      // dispatch an event
-      this.scene.events.emit('coinCollected', player.health);
-    }
-  }]);
-
-  return Coins;
-}(Phaser.Physics.Arcade.StaticGroup);
-
-exports.default = Coins;
-
-/***/ }),
-/* 1396 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-__webpack_require__(50);
-
-var _Enemy = __webpack_require__(1397);
-
-var _Enemy2 = _interopRequireDefault(_Enemy);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Enemies = function (_Phaser$Physics$Arcad) {
-  _inherits(Enemies, _Phaser$Physics$Arcad);
-
-  function Enemies(world, scene, children, spriteArray, levels) {
-    _classCallCheck(this, Enemies);
-
-    var _this = _possibleConstructorReturn(this, (Enemies.__proto__ || Object.getPrototypeOf(Enemies)).call(this, world, scene, children));
-
-    _this.scene = scene;
-    _this.spriteFrames = [0, 1, 54, 55, 108, 109, 162, 163];
-    _this.levels = levels;
-
-    // create our enemies from the sprite array
-    _this.createEnemies(scene, spriteArray);
-    return _this;
-  }
-
-  _createClass(Enemies, [{
-    key: 'createEnemies',
-    value: function createEnemies(scene, spriteArray) {
-      var _this2 = this;
-
-      spriteArray.forEach(function (sprite) {
-        var randNumber = Math.floor(Math.random() * _this2.spriteFrames.length - 1);
-        // create a new enemy
-        var enemy = new _Enemy2.default(scene, sprite.x, sprite.y, _this2.spriteFrames[randNumber], _this2.levels);
-        // add to our group
-        _this2.add(enemy);
-        // destroy the sprite
-        sprite.destroy();
-      });
-    }
-  }]);
-
-  return Enemies;
-}(Phaser.Physics.Arcade.Group);
-
-exports.default = Enemies;
-
-/***/ }),
-/* 1397 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-__webpack_require__(50);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Enemy = function (_Phaser$Physics$Arcad) {
-  _inherits(Enemy, _Phaser$Physics$Arcad);
-
-  function Enemy(scene, x, y, frame, levels) {
-    _classCallCheck(this, Enemy);
-
-    var _this = _possibleConstructorReturn(this, (Enemy.__proto__ || Object.getPrototypeOf(Enemy)).call(this, scene, x, y, 'enemigo', frame));
-
-    _this.scene = scene;
-    _this.health = 2;
-    _this.escala1 = 0.035;
-    _this.escala2 = 0.2;
-    _this.levels = levels;
-
-    // enable physics
-    _this.scene.physics.world.enable(_this);
-    // add our player to the scene
-    _this.scene.add.existing(_this);
-    // scale our player
-    console.log(_this.levels);
-    if (_this.levels == 1) {
-      _this.setScale(_this.escala1);
-    } else {
-      _this.setScale(_this.escala2);
-    }
-
-    // move our enemy
-    _this.timeEvent = _this.scene.time.addEvent({
-      delay: 600,
-      callback: _this.move,
-      loop: true,
-      callbackScope: _this
-    });
-    return _this;
-  }
-
-  _createClass(Enemy, [{
-    key: 'loseHealth',
-    value: function loseHealth() {
-      var _this2 = this;
-
-      this.health--;
+  enemyCollision(player, enemy) {
+    if (!this.hitDelay) {
+      this.loseHealth();
+      this.hitDelay = true;
       this.tint = 0xff0000;
-      if (this.health === 0) {
-        this.timeEvent.destroy();
-        this.destroy();
-      } else {
-        this.scene.time.addEvent({
-          delay: 200,
-          callback: function callback() {
-            _this2.tint = 0xffffff;
-          }
-        });
-      }
-    }
-  }, {
-    key: 'move',
-    value: function move() {
-      var _this3 = this;
-
-      var randNumber = Math.floor(Math.random() * 4 + 1);
-      switch (randNumber) {
-        case 1:
-          this.setVelocityX(300);
-          break;
-        case 2:
-          this.setVelocityX(-300);
-          break;
-        case 3:
-          this.setVelocityY(300);
-          break;
-        case 4:
-          this.setVelocityY(-300);
-          break;
-        default:
-          this.setVelocityX(300);
-      }
-
       this.scene.time.addEvent({
-        delay: 500,
-        callback: function callback() {
-          if (_this3.active) _this3.setVelocity(0);
+        delay: 1200,
+        callback: () => {
+          this.hitDelay = false;
+          this.tint = 0xffffff;
         },
         callbackScope: this
       });
     }
-  }]);
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Player;
 
-  return Enemy;
-}(Phaser.Physics.Arcade.Sprite);
 
-exports.default = Enemy;
+/***/ }),
+/* 1394 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_phaser__);
+
+
+class Player extends Phaser.Physics.Arcade.Sprite {
+  constructor(scene, x, y) {
+    super(scene, x, y, 'portal');
+    this.scene = scene;
+
+    // enable physics
+    this.scene.physics.world.enable(this);
+    // add our player to the scene
+    this.scene.add.existing(this);
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Player;
+
+
+/***/ }),
+/* 1395 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_phaser__);
+
+
+class Coins extends Phaser.Physics.Arcade.StaticGroup {
+  constructor(world, scene, children, spriteArray) {
+    super(world, scene, children);
+    this.scene = scene;
+
+    // add coins to our group
+    spriteArray.forEach(coin => {
+      coin.setScale(0.2);
+      this.add(coin);
+    });
+    this.refresh();
+  }
+
+  collectCoin(player, coin) {
+    this.remove(coin);
+    coin.destroy();
+    // dispatch an event
+    this.scene.events.emit('coinCollected', player.health);
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Coins;
+
+
+/***/ }),
+/* 1396 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_phaser__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Sprites_Enemy__ = __webpack_require__(1397);
+
+
+
+class Enemies extends Phaser.Physics.Arcade.Group {
+  constructor(world, scene, children, spriteArray, levels) {
+    super(world, scene, children);
+    this.scene = scene;
+    this.spriteFrames = [0, 1, 54, 55, 108, 109, 162, 163];
+    this.levels = levels;
+
+    // create our enemies from the sprite array
+    this.createEnemies(scene, spriteArray);
+  }
+
+  createEnemies(scene, spriteArray) {
+    spriteArray.forEach(sprite => {
+      const randNumber = Math.floor(Math.random() * this.spriteFrames.length - 1);
+      // create a new enemy
+      const enemy = new __WEBPACK_IMPORTED_MODULE_1__Sprites_Enemy__["a" /* default */](scene, sprite.x, sprite.y, this.spriteFrames[randNumber], this.levels);
+      // add to our group
+      this.add(enemy);
+      // destroy the sprite
+      sprite.destroy();
+    });
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Enemies;
+
+
+/***/ }),
+/* 1397 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_phaser__);
+
+
+class Enemy extends Phaser.Physics.Arcade.Sprite {
+  constructor(scene, x, y, frame, levels) {
+    super(scene, x, y, 'enemigo', frame);
+    this.scene = scene;
+    this.health = 2;
+    this.escala1 = 0.035;
+    this.escala2 = 0.2;
+    this.levels = levels;
+
+    // enable physics
+    this.scene.physics.world.enable(this);
+    // add our player to the scene
+    this.scene.add.existing(this);
+    // scale our player
+    console.log(this.levels);
+    if (this.levels == 1) {
+      this.setScale(this.escala1);
+    } else {
+      this.setScale(this.escala2);
+    }
+
+    // move our enemy
+    this.timeEvent = this.scene.time.addEvent({
+      delay: 600,
+      callback: this.move,
+      loop: true,
+      callbackScope: this
+    });
+  }
+
+  loseHealth() {
+    this.health--;
+    this.tint = 0xff0000;
+    if (this.health === 0) {
+      this.timeEvent.destroy();
+      this.destroy();
+    } else {
+      this.scene.time.addEvent({
+        delay: 200,
+        callback: () => {
+          this.tint = 0xffffff;
+        }
+      });
+    }
+  }
+
+  move() {
+    const randNumber = Math.floor(Math.random() * 4 + 1);
+    switch (randNumber) {
+      case 1:
+        this.setVelocityX(300);
+        break;
+      case 2:
+        this.setVelocityX(-300);
+        break;
+      case 3:
+        this.setVelocityY(300);
+        break;
+      case 4:
+        this.setVelocityY(-300);
+        break;
+      default:
+        this.setVelocityX(300);
+    }
+
+    this.scene.time.addEvent({
+      delay: 500,
+      callback: () => {
+        if (this.active) this.setVelocity(0);
+      },
+      callbackScope: this
+    });
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Enemy;
+
 
 /***/ }),
 /* 1398 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_phaser__);
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+class Bullets extends Phaser.Physics.Arcade.Group {
+  constructor(world, scene, children) {
+    super(world, scene, children);
+    this.scene = scene;
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-__webpack_require__(50);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Bullets = function (_Phaser$Physics$Arcad) {
-  _inherits(Bullets, _Phaser$Physics$Arcad);
-
-  function Bullets(world, scene, children) {
-    _classCallCheck(this, Bullets);
-
-    var _this = _possibleConstructorReturn(this, (Bullets.__proto__ || Object.getPrototypeOf(Bullets)).call(this, world, scene, children));
-
-    _this.scene = scene;
-
-    _this.createMultiple({
+    this.createMultiple({
       frameQuantity: 3,
       key: 'bullet',
       active: false,
       visible: false
     });
-    return _this;
   }
 
-  _createClass(Bullets, [{
-    key: 'enemyCollision',
-    value: function enemyCollision(bullet, enemy) {
-      bullet.active = false;
-      bullet.visible = false;
-      bullet.disableBody();
-      enemy.loseHealth();
-    }
-  }, {
-    key: 'fireBullet',
-    value: function fireBullet(x, y, direction) {
-      var bullet = this.getFirstDead(false);
-      if (bullet) {
-        bullet.enableBody(true);
-        bullet.active = true;
-        bullet.visible = true;
-        bullet.setPosition(x, y);
-        bullet.setScale(0.03);
+  enemyCollision(bullet, enemy) {
+    bullet.active = false;
+    bullet.visible = false;
+    bullet.disableBody();
+    enemy.loseHealth();
+  }
 
-        switch (direction) {
-          case 'up':
-            bullet.setVelocityY(-300);
-            break;
-          case 'down':
-            bullet.setVelocityY(300);
-            break;
-          case 'left':
-            bullet.setVelocityX(-300);
-            break;
-          case 'right':
-            bullet.setVelocityX(300);
-            break;
-          default:
-            bullet.setVelocityY(-300);
-        }
+  fireBullet(x, y, direction) {
+    const bullet = this.getFirstDead(false);
+    if (bullet) {
+      bullet.enableBody(true);
+      bullet.active = true;
+      bullet.visible = true;
+      bullet.setPosition(x, y);
+      bullet.setScale(0.03);
 
-        this.scene.time.addEvent({
-          delay: 1500,
-          callback: function callback() {
-            bullet.disableBody();
-            bullet.active = false;
-            bullet.visible = false;
-            bullet.setVelocity(0);
-          }
-        });
+      switch (direction) {
+        case 'up':
+          bullet.setVelocityY(-300);
+          break;
+        case 'down':
+          bullet.setVelocityY(300);
+          break;
+        case 'left':
+          bullet.setVelocityX(-300);
+          break;
+        case 'right':
+          bullet.setVelocityX(300);
+          break;
+        default:
+          bullet.setVelocityY(-300);
       }
+
+      this.scene.time.addEvent({
+        delay: 1500,
+        callback: () => {
+          bullet.disableBody();
+          bullet.active = false;
+          bullet.visible = false;
+          bullet.setVelocity(0);
+        }
+      });
     }
-  }]);
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = Bullets;
 
-  return Bullets;
-}(Phaser.Physics.Arcade.Group);
-
-exports.default = Bullets;
 
 /***/ }),
 /* 1399 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_phaser__);
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-__webpack_require__(50);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var BootScene = function (_Phaser$Scene) {
-  _inherits(BootScene, _Phaser$Scene);
-
-  function BootScene(key) {
-    _classCallCheck(this, BootScene);
-
-    return _possibleConstructorReturn(this, (BootScene.__proto__ || Object.getPrototypeOf(BootScene)).call(this, key));
+class BootScene extends Phaser.Scene {
+  constructor(key) {
+    super(key);
   }
 
-  _createClass(BootScene, [{
-    key: 'preload',
-    value: function preload() {
-      this.levels = {
-        1: 'level1',
-        2: 'level2'
-      };
-      // load in the tilemap
-      this.load.tilemapTiledJSON('level1', 'assets/tilemaps/level1.json');
-      this.load.tilemapTiledJSON('level2', 'assets/tilemaps/level2.json');
-      // load in the spritesheet
-      this.load.spritesheet('RPGpack_sheet', 'assets/images/RPGpack_sheet.png', { frameWidth: 64, frameHeight: 64 });
-      // load in our character spritesheet
-      this.load.spritesheet('characters', 'assets/images/roguelikeChar_transparent.png', { frameWidth: 17, frameHeight: 17 });
-      // load our portal sprite
-      this.load.image('portal', 'assets/images/raft.png');
+  preload() {
+    this.levels = {
+      1: 'level1',
+      2: 'level2'
+    };
+    // load in the tilemap
+    this.load.tilemapTiledJSON('level1', 'assets/tilemaps/level1.json');
+    this.load.tilemapTiledJSON('level2', 'assets/tilemaps/level2.json');
+    // load in the spritesheet
+    this.load.spritesheet('RPGpack_sheet', 'assets/images/RPGpack_sheet.png', { frameWidth: 64, frameHeight: 64 });
+    // load in our character spritesheet
+    this.load.spritesheet('characters', 'assets/images/roguelikeChar_transparent.png', { frameWidth: 17, frameHeight: 17 });
+    // load our portal sprite
+    this.load.image('portal', 'assets/images/raft.png');
 
-      // load our portal sprite
-      this.load.image('enemigo', 'assets/images/enemy.png');
+    // load our portal sprite
+    this.load.image('enemigo', 'assets/images/enemy.png');
 
-      // load or player spritesheet
-      this.load.spritesheet('player', 'assets/images/player.png', { frameWidth: 64, frameHeight: 64 });
-      // load in our coin sprite
-      this.load.image('coin', 'assets/images/coin_01.png');
-      // load in our bullet sprite
-      this.load.image('bullet', 'assets/images/ballBlack_04.png');
+    // load or player spritesheet
+    this.load.spritesheet('player', 'assets/images/player.png', { frameWidth: 64, frameHeight: 64 });
+    // load in our coin sprite
+    this.load.image('coin', 'assets/images/coin_01.png');
+    // load in our bullet sprite
+    this.load.image('bullet', 'assets/images/ballBlack_04.png');
 
-      /*PRUEBA DE LA MÚSICA*/
+    /*PRUEBA DE LA MÚSICA*/
 
-      this.load.audio('theme', ['assets/images/fondo.mp3']);
+    this.load.audio('theme', ['assets/images/fondo.mp3']);
 
-      /*PRUEBA DE LA MÚSICA*/
-    }
-  }, {
-    key: 'create',
-    value: function create() {
-      this.scene.start('Game', { level: 1, newGame: true, levels: this.levels });
-    }
-  }]);
+    /*PRUEBA DE LA MÚSICA*/
+  }
 
-  return BootScene;
-}(Phaser.Scene);
-
-exports.default = BootScene;
+  create() {
+    this.scene.start('Game', { level: 1, newGame: true, levels: this.levels });
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = BootScene;
 ;
 
 /***/ }),
 /* 1400 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_phaser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_phaser__);
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-__webpack_require__(50);
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var coinsCollected;
 var vida;
@@ -162797,86 +162537,73 @@ var ayuda = "Ayuda: 30 estrellas +3 de vida";
 var ayudacomp = "Completado, +3 de vida.";
 var objetivo = "Consigue 50 monedas para ganar.";
 
-var UIScene = function (_Phaser$Scene) {
-  _inherits(UIScene, _Phaser$Scene);
-
-  function UIScene() {
-    _classCallCheck(this, UIScene);
-
-    return _possibleConstructorReturn(this, (UIScene.__proto__ || Object.getPrototypeOf(UIScene)).call(this, { key: 'UI', active: true }));
+class UIScene extends Phaser.Scene {
+  constructor() {
+    super({ key: 'UI', active: true });
   }
 
-  _createClass(UIScene, [{
-    key: "init",
-    value: function init() {
+  init() {
+    coinsCollected = 0;
+    vida = 0;
+  }
+
+  create() {
+    // create score text
+    this.scoreText = this.add.text(12, 40, `Estrellas: ${coinsCollected}`, { fontSize: '32px', fill: '#fff' });
+    // objetivos
+    this.objText = this.add.text(550, 12, `${objetivo}`, { fontSize: '45px', fill: '#CF3476' });
+    // create health text
+    this.healthText = this.add.text(12, 12, `Vidas: 7`, { fontSize: '32px', fill: '#fff' });
+    this.consejo = this.add.text(12, 70, `${ayuda}`, { fontSize: '32px', fill: '#57A639' });
+
+    // get a reference to the game scene
+    this.gameScene = this.scene.get('Game');
+
+    // listen for events from that scene
+    this.gameScene.events.on('coinCollected', health => {
+      {
+        coinsCollected++;
+        if (coinsCollected > 29) {
+          health += 3;
+          this.consejo.setText(`${ayudacomp}`);
+        }
+
+        this.scoreText.setText(`Estrellas: ${coinsCollected}`);
+        this.healthText.setText(`Vidas: ${health}`);
+      }
+      // Vaciar el consejo.
+      {
+        if (coinsCollected > 30) {
+          this.consejo.setText(``);
+        }
+      }
+      // FIN DEL JUEGO
+      {
+        if (coinsCollected > 49) {
+          this.scoreText.setText(``);
+          this.consejo.setText(``);
+          this.objText.setText(``);
+          this.healthText.setText(``);
+          this.win = this.add.text(700, 400, `HAS GANADO!!!!!`, { fontSize: '70px', fill: '#FF2301' });
+        }
+      }
+    });
+
+    this.gameScene.events.on('loseHealth', health => {
+      this.healthText.setText(`Vidas: ${health}`);
+    });
+
+    this.gameScene.events.on('newGame', () => {
       coinsCollected = 0;
-      vida = 0;
-    }
-  }, {
-    key: "create",
-    value: function create() {
-      var _this2 = this;
-
-      // create score text
-      this.scoreText = this.add.text(12, 40, "Estrellas: " + coinsCollected, { fontSize: '32px', fill: '#fff' });
-      // objetivos
-      this.objText = this.add.text(550, 12, "" + objetivo, { fontSize: '45px', fill: '#CF3476' });
-      // create health text
-      this.healthText = this.add.text(12, 12, "Vidas: 7", { fontSize: '32px', fill: '#fff' });
-      this.consejo = this.add.text(12, 70, "" + ayuda, { fontSize: '32px', fill: '#57A639' });
-
-      // get a reference to the game scene
-      this.gameScene = this.scene.get('Game');
-
-      // listen for events from that scene
-      this.gameScene.events.on('coinCollected', function (health) {
-        {
-          coinsCollected++;
-          if (coinsCollected > 29) {
-            health += 3;
-            _this2.consejo.setText("" + ayudacomp);
-          }
-
-          _this2.scoreText.setText("Estrellas: " + coinsCollected);
-          _this2.healthText.setText("Vidas: " + health);
-        }
-        // Vaciar el consejo.
-        {
-          if (coinsCollected > 30) {
-            _this2.consejo.setText("");
-          }
-        }
-        // FIN DEL JUEGO
-        {
-          if (coinsCollected > 49) {
-            _this2.scoreText.setText("");
-            _this2.consejo.setText("");
-            _this2.objText.setText("");
-            _this2.healthText.setText("");
-            _this2.win = _this2.add.text(700, 400, "HAS GANADO!!!!!", { fontSize: '70px', fill: '#FF2301' });
-          }
-        }
-      });
-
-      this.gameScene.events.on('loseHealth', function (health) {
-        _this2.healthText.setText("Vidas: " + health);
-      });
-
-      this.gameScene.events.on('newGame', function () {
-        coinsCollected = 0;
-        vida = 7;
-        _this2.scoreText.setText("Estrellas: " + coinsCollected);
-        _this2.healthText.setText("Vidas: " + vida);
-        _this2.consejo.setText("" + ayuda);
-        _this2.objText.setText("" + objetivo);
-      });
-    }
-  }]);
-
-  return UIScene;
-}(Phaser.Scene);
-
-exports.default = UIScene;
+      vida = 7;
+      this.scoreText.setText(`Estrellas: ${coinsCollected}`);
+      this.healthText.setText(`Vidas: ${vida}`);
+      this.consejo.setText(`${ayuda}`);
+      this.objText.setText(`${objetivo}`);
+    });
+  }
+}
+/* harmony export (immutable) */ __webpack_exports__["a"] = UIScene;
 ;
 
 /***/ })
